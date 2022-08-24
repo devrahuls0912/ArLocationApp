@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "730344319721",
+    "firebase_url": "https://demotask-ebfd2.firebaseio.com",
+    "project_id": "demotask-ebfd2",
+    "storage_bucket": "demotask-ebfd2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:730344319721:android:3109f0cedfe12f83c91e78",
+        "android_client_info": {
+          "package_name": "com.bodhi.arloctiondemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "730344319721-j705rh4k58tdtpe3e6nbg513kbatb2a4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bodhi.arloctiondemo",
+            "certificate_hash": "45b5485cb64234ed8acd8eb45bdd5e45c23947b5"
+          }
+        },
+        {
+          "client_id": "730344319721-uqhja1ajiqpodvtuidlcjcjmvvhri5cv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeb5AKW5CGpnUpj0FgFt8vy5bZlZEDgjQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "730344319721-lv1kirj033sumdpdbf41hrrdtrlr9e15.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

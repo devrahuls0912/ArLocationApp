@@ -1,0 +1,8 @@
+[
+  {"navigation":[{"itemCode":1,"legId":1},{"itemCode":2,"legId":1},{"itemCode":3,"legId":1},{"itemCode":4,"legId":1}]},
+  {"navigation":[{"itemCode":1,"legId":2},{"itemCode":2,"legId":2},{"itemCode":3,"legId":2},{"itemCode":4,"legId":2}]},
+  {"navigation":[{"itemCode":1,"legId":3},{"itemCode":2,"legId":3},{"itemCode":3,"legId":3},{"itemCode":4,"legId":3}]},
+  {"navigation":[{"itemCode":1,"legId":4},{"itemCode":2,"legId":4},{"itemCode":3,"legId":4},{"itemCode":4,"legId":4}]},
+  {"navigation":[{"itemCode":1,"legId":5},{"itemCode":2,"legId":5},{"itemCode":3,"legId":5},{"itemCode":4,"legId":5}]}
+
+]
