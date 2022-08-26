@@ -4,7 +4,7 @@
       "itemCode": 1,
       "mallCode": 1,
       "scannedNode": false,
-      "itemName": "White sugar",
+      "itemName": "Fruits",
       "path": [
         {
           "pathId": 1,
@@ -137,7 +137,7 @@
       "itemCode": 2,
       "mallCode": 1,
       "scannedNode": false,
-      "itemName": "Dates",
+      "itemName": "Vegetables",
       "path": [
         {
           "pathId": 0,
@@ -529,7 +529,775 @@
       "itemCode": 3,
       "mallCode": 1,
       "scannedNode": false,
-      "itemName": "Apples",
+      "itemName": "Rice",
+      "path": [
+        {
+          "pathId": 1,
+          "legs": [
+            {
+              "type": "INFO",
+              "angle": 0.0,
+              "distance": 0.25,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 0.5,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 0.75,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.0,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.25,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.5,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.75,
+              "depth": 0.0
+            }
+          ]
+        },
+        {
+          "pathId": 3,
+          "legs": [
+            {
+              "type": "INFO",
+              "angle": 180.0,
+              "distance": 1.0,
+              "info": "On your left fresh Vegetables and right packaged one will be available.",
+              "depth": 0.0
+            },
+            {
+              "type": "DESTINATION",
+              "angle": 198.0,
+              "distance": 1.0,
+              "depth": 0.0
+            }
+          ]
+        },
+        {
+          "pathId": 4,
+          "legs": [
+            {
+              "type": "INFO",
+              "angle": 0.0,
+              "distance": 0.0,
+              "info": "Go to your back then turn left side for next direction",
+              "depth": 0.0
+            }, {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 0.25
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 0.25
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 0.5
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 0.75
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 1.0
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 1.25
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 1.5
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 1.75
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 2.0
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 2.5
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 3.05
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 3.55
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 4.05
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 4.55
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 5.05
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 0.25,
+              "depth": 5.05
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.5,
+              "depth": 5.05
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 2.0,
+              "depth": 5.05
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemCode": 4,
+      "mallCode": 1,
+      "scannedNode": false,
+      "itemName": "Wheat",
+      "path": [
+        {
+          "pathId": 1,
+          "legs": [
+            {
+              "type": "INFO",
+              "angle": 0.0,
+              "distance": 0.25,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 0.5,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 0.75,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.0,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.25,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.5,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.75,
+              "depth": 0.0
+            }
+          ]
+        },
+        {
+          "pathId": 3,
+          "legs": [
+            {
+              "type": "INFO",
+              "angle": 180.0,
+              "distance": 1.0,
+              "info": "On your left fresh Vegetables and right packaged one will be available.",
+              "depth": 0.0
+            },
+            {
+              "type": "DESTINATION",
+              "angle": 198.0,
+              "distance": 1.0,
+              "depth": 0.0
+            }
+          ]
+        },
+        {
+          "pathId": 4,
+          "legs": [
+            {
+              "type": "INFO",
+              "angle": 0.0,
+              "distance": 0.0,
+              "info": "Go to your back then turn left side for next direction",
+              "depth": 0.0
+            }, {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 0.25
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 0.25
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 0.5
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 0.75
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 1.0
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 1.25
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 1.5
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 1.75
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 2.0
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 2.5
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 3.05
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 3.55
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 4.05
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 4.55
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 5.05
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 0.25,
+              "depth": 5.05
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.5,
+              "depth": 5.05
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 2.0,
+              "depth": 5.05
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemCode": 5,
+      "mallCode": 1,
+      "scannedNode": false,
+      "itemName": "Refined Oils",
+      "path": [
+        {
+          "pathId": 1,
+          "legs": [
+            {
+              "type": "INFO",
+              "angle": 0.0,
+              "distance": 0.25,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 0.5,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 0.75,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.0,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.25,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.5,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.75,
+              "depth": 0.0
+            }
+          ]
+        },
+        {
+          "pathId": 3,
+          "legs": [
+            {
+              "type": "INFO",
+              "angle": 180.0,
+              "distance": 1.0,
+              "info": "On your left fresh Vegetables and right packaged one will be available.",
+              "depth": 0.0
+            },
+            {
+              "type": "DESTINATION",
+              "angle": 198.0,
+              "distance": 1.0,
+              "depth": 0.0
+            }
+          ]
+        },
+        {
+          "pathId": 4,
+          "legs": [
+            {
+              "type": "INFO",
+              "angle": 0.0,
+              "distance": 0.0,
+              "info": "Go to your back then turn left side for next direction",
+              "depth": 0.0
+            }, {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 0.25
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 0.25
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 0.5
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 0.75
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 1.0
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 1.25
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 1.5
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 1.75
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 2.0
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 2.5
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 3.05
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 3.55
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 4.05
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 4.55
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 5.05
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 0.25,
+              "depth": 5.05
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.5,
+              "depth": 5.05
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 2.0,
+              "depth": 5.05
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemCode": 6,
+      "mallCode": 1,
+      "scannedNode": false,
+      "itemName": "Dry Fruits",
+      "path": [
+        {
+          "pathId": 1,
+          "legs": [
+            {
+              "type": "INFO",
+              "angle": 0.0,
+              "distance": 0.25,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 0.5,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 0.75,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.0,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.25,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.5,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.75,
+              "depth": 0.0
+            }
+          ]
+        },
+        {
+          "pathId": 3,
+          "legs": [
+            {
+              "type": "INFO",
+              "angle": 180.0,
+              "distance": 1.0,
+              "info": "On your left fresh Vegetables and right packaged one will be available.",
+              "depth": 0.0
+            },
+            {
+              "type": "DESTINATION",
+              "angle": 198.0,
+              "distance": 1.0,
+              "depth": 0.0
+            }
+          ]
+        },
+        {
+          "pathId": 4,
+          "legs": [
+            {
+              "type": "INFO",
+              "angle": 0.0,
+              "distance": 0.0,
+              "info": "Go to your back then turn left side for next direction",
+              "depth": 0.0
+            }, {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 0.25
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 0.25
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 0.5
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 0.75
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 1.0
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 1.25
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 1.5
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 1.75
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 2.0
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 2.5
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 3.05
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 3.55
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 4.05
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 4.55
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 5.05
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 0.25,
+              "depth": 5.05
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.5,
+              "depth": 5.05
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 2.0,
+              "depth": 5.05
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemCode": 7,
+      "mallCode": 1,
+      "scannedNode": false,
+      "itemName": "Pharmaceuticals",
       "path": [
         {
           "pathId": 1,

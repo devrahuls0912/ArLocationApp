@@ -9,7 +9,7 @@ import com.bodhi.arloctiondemo.databinding.ItemShopViewHolderBinding
 import com.bodhi.arloctiondemo.mapShopItemImageDrawable
 
 class ShopItemAdapter(
-    val list: List<ShopItems>,
+    var list: List<ShopItems>,
     val onSelectDelegate: (item: List<ShopItems>) -> Unit
 ) :
     RecyclerView.Adapter<ShopItemAdapter.ShopItemsViewHolder>() {
@@ -23,7 +23,7 @@ class ShopItemAdapter(
                 itemBinding.itemImage.setImageDrawable(it)
             }
             itemBinding.itemName.text = item.itemName
-            itemBinding.mallId.text = item.mallCode.toString()
+            itemBinding.itemDescription.text = "Item Code: "+item.itemCode+"\n"+"Mall ID: "+item.mallCode
             val itemSelected = if (tempSelectedList.isEmpty()) false
             else tempSelectedList.first().itemCode == item.itemCode
 
@@ -54,4 +54,10 @@ class ShopItemAdapter(
     override fun onBindViewHolder(holder: ShopItemsViewHolder, position: Int) {
         holder.bindItem(list[position])
     }
+
+    fun filterList(filteredList: ArrayList<ShopItems>) {
+        list = filteredList
+        notifyDataSetChanged()
+    }
+
 }

@@ -18,10 +18,14 @@ fun AssetManager.readAssetsFile(
 
 fun mapShopItemImageDrawable(context: Context, itemId: Int): Drawable? {
     return when (itemId) {
-        1 -> ContextCompat.getDrawable(context, R.drawable.groceries)
-        2 -> ContextCompat.getDrawable(context, R.drawable.dry_fruits)
-        3 -> ContextCompat.getDrawable(context, R.drawable.veggies)
-        else -> ContextCompat.getDrawable(context, R.drawable.drinks)
+        1 -> ContextCompat.getDrawable(context, R.drawable.fruits)
+        2 -> ContextCompat.getDrawable(context, R.drawable.vegetables)
+        3 -> ContextCompat.getDrawable(context, R.drawable.rice)
+        4 -> ContextCompat.getDrawable(context,R.drawable.wheat)
+        5 -> ContextCompat.getDrawable(context,R.drawable.refined_oil)
+        6 -> ContextCompat.getDrawable(context,R.drawable.dryfruits)
+        7 -> ContextCompat.getDrawable(context,R.drawable.pharma)
+        else -> ContextCompat.getDrawable(context,R.drawable.fruits)
     }
 
 }
