@@ -82,17 +82,15 @@ class ShopListActivity : AppCompatActivity() {
             })
 
             shopButton.setOnClickListener {
-                startActivity(
-                    Intent(
-                        this@ShopListActivity,
-                        NavigationActivity::class.java
-                    ).apply {
-                        putExtra(
-                            "listSelected",
-                            selectedShopItemList.first().itemCode
-                        )
-                    }
+                val itemCodeList = selectedShopItemList.map { it.itemCode }
+                val listOfSelectedItemCode = arrayListOf<Int>()
+                listOfSelectedItemCode.addAll(itemCodeList)
+                val intent = Intent(
+                    this@ShopListActivity,
+                    NavigationActivity::class.java
                 )
+                intent.putExtra("selectedItemCodeList", listOfSelectedItemCode)
+                startActivity(intent)
             }
         }
     }
@@ -109,12 +107,12 @@ class ShopListActivity : AppCompatActivity() {
 
 
     private fun createShopItems(): List<ShopItems> {
-        val mallItemList =
+        val mallItemResponse =
             Gson().fromJson(
                 this.assets.readAssetsFile("itemlist.json"),
                 MallItemResponse::class.java
             )
-        return mallItemList.mallItems
+        return mallItemResponse.mallItems
     }
 
     override fun onResume() {

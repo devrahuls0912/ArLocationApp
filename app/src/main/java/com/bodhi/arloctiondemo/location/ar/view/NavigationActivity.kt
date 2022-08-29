@@ -79,9 +79,9 @@ class NavigationActivity : AppCompatActivity() {
     private val mHandler = Handler(Looper.getMainLooper())
     private var anchorsNeedRefresh = true
     private var shouldProcessFrame = true
-    private val selectedItemId: Int by lazy {
-        intent.getIntExtra("listSelected", 1)
-    }
+
+    private lateinit var selectedItemCodeList: ArrayList<Int>
+
     var anchorRefreshTask: Runnable = object : Runnable {
         override fun run() {
             anchorsNeedRefresh = true
@@ -103,6 +103,8 @@ class NavigationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        selectedItemCodeList = intent.getSerializableExtra("selectedItemCodeList") as ArrayList<Int>
+
         if (!Utils.checkIsARSupportedDeviceOrFinish(this)) {
             return
         }
@@ -238,7 +240,7 @@ class NavigationActivity : AppCompatActivity() {
                             )
                             if (qrScanCode.navigation.isNotEmpty()) {
                                 qrScanCode.navigation.find {
-                                    it.itemCode == selectedItemId
+                                    it.itemCode == selectedItemCodeList.first()
                                 }?.let { qr ->
                                     shopList.find { shopItem ->
                                         shopItem.itemCode == qr.itemCode

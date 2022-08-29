@@ -1,5 +1,7 @@
 package com.bodhi.arloctiondemo.data
 
+import java.io.Serializable
+
 data class MallItemResponse(
     val mallItems: List<ShopItems>
 ) {
@@ -11,8 +13,9 @@ data class ShopItems(
     val itemName: String,
     val locaton: List<Double>,
     val route: List<ShopLoc>?,
-    val path: List<PathNavigation>?
-)
+    val path: List<PathNavigation>?,
+    var isSelected: Boolean = false
+) : Serializable
 
 data class ShopLoc(val loc: List<Double>)
 data class PathNavigation(val pathId: Int, val legs: List<LegNav>)

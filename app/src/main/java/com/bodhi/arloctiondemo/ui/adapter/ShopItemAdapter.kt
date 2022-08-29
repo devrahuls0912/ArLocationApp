@@ -11,35 +11,7 @@ import com.bodhi.arloctiondemo.mapShopItemImageDrawable
 class ShopItemAdapter(
     var list: List<ShopItems>,
     val onSelectDelegate: (item: List<ShopItems>) -> Unit
-) :
-    RecyclerView.Adapter<ShopItemAdapter.ShopItemsViewHolder>() {
-    private val tempSelectedList: ArrayList<ShopItems> = arrayListOf()
-    override fun getItemCount(): Int = list.size
-
-    inner class ShopItemsViewHolder(val itemBinding: ItemShopViewHolderBinding) :
-        RecyclerView.ViewHolder(itemBinding.root) {
-        fun bindItem(item: ShopItems) {
-            mapShopItemImageDrawable(itemView.context, item.itemCode)?.let {
-                itemBinding.itemImage.setImageDrawable(it)
-            }
-            itemBinding.itemName.text = item.itemName
-            itemBinding.itemDescription.text = "Item Code: "+item.itemCode+"\n"+"Mall ID: "+item.mallCode
-            val itemSelected = if (tempSelectedList.isEmpty()) false
-            else tempSelectedList.first().itemCode == item.itemCode
-
-            if (itemSelected) {
-                itemBinding.checkbox.visibility = View.VISIBLE
-            } else {
-                itemBinding.checkbox.visibility = View.GONE
-            }
-            itemBinding.thumbItem.setOnClickListener {
-                tempSelectedList.clear()
-                tempSelectedList.add(item)
-                onSelectDelegate(tempSelectedList)
-                notifyDataSetChanged()
-            }
-        }
-    }
+) : RecyclerView.Adapter<ShopItemAdapter.ShopItemsViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ShopItemsViewHolder {
         return ShopItemsViewHolder(
@@ -55,9 +27,48 @@ class ShopItemAdapter(
         holder.bindItem(list[position])
     }
 
+    override fun getItemCount(): Int = list.size
+
     fun filterList(filteredList: ArrayList<ShopItems>) {
         list = filteredList
         notifyDataSetChanged()
     }
+
+
+    inner class ShopItemsViewHolder(val itemBinding: ItemShopViewHolderBinding) :
+        RecyclerView.ViewHolder(itemBinding.root) {
+        fun bindItem(item: ShopItems) {
+            mapShopItemImageDrawable(itemView.context, item.itemCode)?.let {
+                itemBinding.itemImage.setImageDrawable(it)
+            }
+            itemBinding.itemName.text = item.itemName
+            itemBinding.itemDescription.text =
+                "Item Code: " + item.itemCode + "\n" + "Mall ID: " + item.mallCode
+
+            itemBinding.checkbox.visibility = item.isSelected.let {
+                if (it) View.VISIBLE else View.GONE
+            }
+
+            itemBinding.thumbItem.setOnClickListener {
+                item.isSelected = !item.isSelected
+                itemBinding.checkbox.visibility = item.isSelected.let {
+                    if (it) View.VISIBLE else View.GONE
+                }
+                onSelectDelegate(getSelectedShopItemList())
+                notifyDataSetChanged()
+            }
+        }
+    }
+
+    fun getSelectedShopItemList(): ArrayList<ShopItems> {
+        val selectedList: ArrayList<ShopItems> = arrayListOf()
+        for (shopItem in list) {
+            if (shopItem.isSelected) {
+                selectedList.add(shopItem)
+            }
+        }
+        return selectedList
+    }
+
 
 }
