@@ -80,16 +80,23 @@ class NavigationActivity : AppCompatActivity() {
     private var anchorsNeedRefresh = true
     private var shouldProcessFrame = true
 
-    private lateinit var selectedItemCodeList: ArrayList<Int>
+    private val selectedItemCodeList: ArrayList<Int> by lazy {
+        intent.getSerializableExtra("selectedItemCodeList") as ArrayList<Int>
+    }
 
-    var anchorRefreshTask: Runnable = object : Runnable {
+    private var anchorRefreshTask: Runnable = object : Runnable {
         override fun run() {
             anchorsNeedRefresh = true
             mHandler.postDelayed(this, arAnchorRefreshInterval.toLong())
         }
     }
-    private val shopList: List<ShopItems> by lazy {
-        createShopList()
+
+    private val selectedShopItems: List<ShopItems> by lazy {
+        createShopList().filter { shopList ->
+            selectedItemCodeList.any {
+                shopList.itemCode == it
+            }
+        }
     }
     private val qrOptions by lazy {
         BarcodeScannerOptions.Builder()
@@ -103,8 +110,6 @@ class NavigationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        selectedItemCodeList = intent.getSerializableExtra("selectedItemCodeList") as ArrayList<Int>
-
         if (!Utils.checkIsARSupportedDeviceOrFinish(this)) {
             return
         }
@@ -238,26 +243,26 @@ class NavigationActivity : AppCompatActivity() {
                                 it,
                                 QRScanCode::class.java
                             )
+                            // loop through the selected item code
                             if (qrScanCode.navigation.isNotEmpty()) {
-                                qrScanCode.navigation.find {
-                                    it.itemCode == selectedItemCodeList.first()
-                                }?.let { qr ->
-                                    shopList.find { shopItem ->
-                                        shopItem.itemCode == qr.itemCode
-                                    }?.let { shop ->
-                                        shop.path?.find {
+                                selectedShopItems.forEach { selectedone ->
+                                    qrScanCode.navigation.find {
+                                        it.itemCode == selectedone.itemCode
+                                    }?.let { qr ->
+                                        selectedone.path?.find {
                                             it.pathId == qr.legId
                                         }?.let { nathNav ->
                                             nathNav.legs.forEachIndexed { index, legNav ->
                                                 createPrimaryMarker(
                                                     legNav,
-                                                    shop.itemName,
-                                                    shop.itemCode
+                                                    selectedone.itemName,
+                                                    selectedone.itemCode
                                                 )
                                             }
                                         }
                                     }
                                 }
+
                             }
                         }
                     }
