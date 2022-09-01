@@ -1,4 +1,4 @@
-package com.bodhi.arloctiondemo.location.ar.view
+package com.bodhi.arloctiondemo.ui.arview
 
 import android.os.Bundle
 import android.util.Log
@@ -7,8 +7,8 @@ import android.view.View
 import android.widget.Toast
 import com.bodhi.arloctiondemo.data.QRScanCode
 import com.bodhi.arloctiondemo.databinding.NavigationArActivityBinding
-import com.bodhi.arloctiondemo.location.ar.location.handleSessionException
-import com.bodhi.arloctiondemo.location.ar.location.setupSession
+import com.bodhi.arloctiondemo.location.arLocation.handleSessionException
+import com.bodhi.arloctiondemo.location.arLocation.setupSession
 import com.google.ar.core.exceptions.UnavailableException
 import com.google.ar.sceneform.ArSceneView
 import com.google.gson.Gson

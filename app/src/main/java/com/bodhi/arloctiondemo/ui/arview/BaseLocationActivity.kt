@@ -1,4 +1,4 @@
-package com.bodhi.arloctiondemo.location.ar.view
+package com.bodhi.arloctiondemo.ui.arview
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -16,8 +16,8 @@ import com.bodhi.arloctiondemo.data.MallItemResponse
 import com.bodhi.arloctiondemo.data.ShopItems
 import com.bodhi.arloctiondemo.location.Utils
 import com.bodhi.arloctiondemo.location.Utils.matchLocation
-import com.bodhi.arloctiondemo.location.ar.location.getScaleModifierBasedOnRealDistance
-import com.bodhi.arloctiondemo.location.ar.location.showDistance
+import com.bodhi.arloctiondemo.location.arLocation.getScaleModifierBasedOnRealDistance
+import com.bodhi.arloctiondemo.location.arLocation.showDistance
 import com.bodhi.arloctiondemo.location.arLocation.LocationMarker
 import com.bodhi.arloctiondemo.location.arLocation.LocationScene
 import com.bodhi.arloctiondemo.location.arLocation.model.AnchorReferences
@@ -181,8 +181,8 @@ abstract class BaseLocationActivity : AppCompatActivity() {
                 try {
                     val venueMarker = LocationMarker(
                         LatLng(
-                            venue.locaton[0],
-                            venue.locaton[1]
+                            venue.locaton?.get(0) ?: 0.0,
+                            venue.locaton?.get(1) ?: 0.0
                         ),
                         setVenueNode(
                             venue, it
@@ -280,8 +280,8 @@ abstract class BaseLocationActivity : AppCompatActivity() {
                     detachMarker(it)
                     it.location.matchLocation(
                         LatLng(
-                            venue.locaton[0],
-                            venue.locaton[1]
+                            venue.locaton?.get(0) ?: 0.0,
+                            venue.locaton?.get(1) ?: 0.0
                         )
                     ).not()
                 }
@@ -449,8 +449,8 @@ abstract class BaseLocationActivity : AppCompatActivity() {
                 )
                 //Plot destination marker
                 shopList.firstOrNull {
-                    it.locaton.first() == route.last().loc.first() &&
-                            it.locaton.last() == route.last().loc.last()
+                    it.locaton?.first() == route.last().loc.first() &&
+                            it.locaton?.last() == route.last().loc.last()
                 }?.let {
                     plotDestination(it)
                 }

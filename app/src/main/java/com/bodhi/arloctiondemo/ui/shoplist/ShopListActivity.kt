@@ -7,18 +7,17 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
+import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
-import com.bodhi.arloctiondemo.data.MallItemResponse
+import com.bodhi.arloctiondemo.ArViewModel
 import com.bodhi.arloctiondemo.data.ShopItems
 import com.bodhi.arloctiondemo.databinding.ActivityShopItemListingBinding
-import com.bodhi.arloctiondemo.location.ar.view.NavigationActivity
-import com.bodhi.arloctiondemo.readAssetsFile
 import com.bodhi.arloctiondemo.ui.adapter.ShopItemAdapter
+import com.bodhi.arloctiondemo.ui.arview.NavigationActivity
 import com.bodhi.arloctiondemo.ui.login.LoginActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.google.gson.Gson
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.MultiplePermissionsReport
 import com.karumi.dexter.PermissionToken
@@ -37,26 +36,26 @@ class ShopListActivity : AppCompatActivity() {
 
     private lateinit var adapter: ShopItemAdapter
 
-    private val shopItems: List<ShopItems> by lazy {
-        createShopItems()
-    }
+    private lateinit var shopItems: List<ShopItems>
 
     private var selectedShopItemList: List<ShopItems> = emptyList()
+    private val viewModel: ArViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+
         setSupportActionBar(binding.toolbar)
         supportActionBar?.title = ""
-
+        setUpObservable()
         with(binding) {
-            listitems.layoutManager = GridLayoutManager(this@ShopListActivity, 2)
-            adapter = ShopItemAdapter(shopItems) {
+            adapter = ShopItemAdapter {
                 selectedShopItemList = it
                 if (selectedShopItemList.isNotEmpty())
                     shopButton.visibility = View.VISIBLE
                 else shopButton.visibility = View.INVISIBLE
             }
             listitems.adapter = adapter
+            listitems.layoutManager = GridLayoutManager(this@ShopListActivity, 2)
             logout.setOnClickListener {
                 FirebaseAuth.getInstance().signOut()
                 startActivity(
@@ -67,8 +66,7 @@ class ShopListActivity : AppCompatActivity() {
                 )
                 finish()
             }
-
-            searchET.addTextChangedListener(object: TextWatcher {
+            searchET.addTextChangedListener(object : TextWatcher {
                 override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 }
 
@@ -80,7 +78,6 @@ class ShopListActivity : AppCompatActivity() {
                 }
 
             })
-
             shopButton.setOnClickListener {
                 val itemCodeList = selectedShopItemList.map { it.itemCode }
                 val listOfSelectedItemCode = arrayListOf<Int>()
@@ -93,27 +90,31 @@ class ShopListActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
+        viewModel.createShopItems()
     }
 
-    private fun filter(searchText: String){
+    private fun setUpObservable() {
+        viewModel.getItemListingObservable().observe(this) { shopList ->
+            shopList?.let {
+                shopItems = it
+                adapter.updateShopList(shopItems)
+            }
+
+        }
+    }
+
+    private fun filter(searchText: String) {
         val filteredList = arrayListOf<ShopItems>()
         for (item in shopItems) {
-            if(item.itemName.lowercase(Locale.getDefault()).contains(searchText.lowercase(Locale.getDefault()))){
+            if (item.itemName.lowercase(Locale.getDefault())
+                    .contains(searchText.lowercase(Locale.getDefault()))
+            ) {
                 filteredList.add(item)
             }
         }
         adapter.filterList(filteredList)
     }
 
-
-    private fun createShopItems(): List<ShopItems> {
-        val mallItemResponse =
-            Gson().fromJson(
-                this.assets.readAssetsFile("itemlist.json"),
-                MallItemResponse::class.java
-            )
-        return mallItemResponse.mallItems
-    }
 
     override fun onResume() {
         super.onResume()

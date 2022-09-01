@@ -1,28 +1,17 @@
-package com.bodhi.arloctiondemo.location.ar.location
+package com.bodhi.arloctiondemo.location.arLocation
 
 import android.app.Activity
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
-import android.util.Log
 import android.widget.Toast
 import androidx.core.graphics.drawable.toBitmap
 import com.bodhi.arloctiondemo.R
-import com.bodhi.arloctiondemo.location.ar.location.model.ArImageIndexing
-import com.bodhi.arloctiondemo.location.ar.view.AnchorType
-import com.bodhi.arloctiondemo.location.arLocation.rendering.CompassMarker
+import com.bodhi.arloctiondemo.location.arLocation.model.ArImageIndexing
 import com.google.ar.core.*
 import com.google.ar.core.exceptions.*
-import com.google.ar.sceneform.Node
-import com.google.ar.sceneform.math.Quaternion
-import com.google.ar.sceneform.math.Vector3
-import com.google.ar.sceneform.rendering.ModelRenderable
-import com.google.ar.sceneform.rendering.Renderable
 import java.io.IOException
 import java.io.InputStream
-import kotlin.math.cos
-import kotlin.math.floor
 import kotlin.math.roundToInt
-import kotlin.math.sin
 
 
 private const val RENDER_MARKER_MIN_DISTANCE = 2.0 // meters

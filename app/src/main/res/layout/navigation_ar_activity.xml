@@ -30,10 +30,12 @@
         android:padding="10dp"
         android:text="Reset session"
         android:textColor="#ffffff"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toEndOf="@+id/middle_guide"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <TextView
         android:id="@+id/distance_to_destination"
@@ -43,6 +45,7 @@
         android:padding="10dp"
         android:text="Distance"
         android:textColor="#ffffff"
+        android:visibility="gone"
         app:layout_constraintEnd_toStartOf="@+id/middle_guide"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,6 +58,7 @@
         android:background="@drawable/exit_background"
         android:paddingTop="20dp"
         android:paddingEnd="20dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -76,6 +80,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:background="@drawable/recalibrate_background"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -91,4 +96,35 @@
         app:layout_constraintEnd_toEndOf="@+id/qr_code"
         app:layout_constraintStart_toStartOf="@+id/qr_code"
         app:layout_constraintTop_toTopOf="@+id/qr_code" />
+
+    <com.jackandphantom.carouselrecyclerview.CarouselRecyclerview
+        android:id="@+id/selectedItemList"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/navigate_to_selected_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:text="Navigate to selected item"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectedItemList" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/heading_selected_navigation_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cardview_dark_background"
+        android:text=""
+        android:textColor="#ffffff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

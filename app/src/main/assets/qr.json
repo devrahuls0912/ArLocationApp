@@ -1,8 +1,1296 @@
 [
-  {"navigation":[{"itemCode":1,"legId":1},{"itemCode":2,"legId":1},{"itemCode":3,"legId":1},{"itemCode":4,"legId":1}]},
-  {"navigation":[{"itemCode":1,"legId":2},{"itemCode":2,"legId":2},{"itemCode":3,"legId":2},{"itemCode":4,"legId":2}]},
-  {"navigation":[{"itemCode":1,"legId":3},{"itemCode":2,"legId":3},{"itemCode":3,"legId":3},{"itemCode":4,"legId":3}]},
-  {"navigation":[{"itemCode":1,"legId":4},{"itemCode":2,"legId":4},{"itemCode":3,"legId":4},{"itemCode":4,"legId":4}]},
-  {"navigation":[{"itemCode":1,"legId":5},{"itemCode":2,"legId":5},{"itemCode":3,"legId":5},{"itemCode":4,"legId":5}]}
-
+  {
+    "navigation": [
+      {
+        "itemCode": 1,
+        "path": {
+          "pathId": 1,
+          "legs": [
+            {
+              "type": "INFO",
+              "angle": 130.0,
+              "info": "Go to left side for next direction",
+              "distance": 0.55,
+              "depth": 0.0
+            },
+            {
+              "type": "LEFT_TURN",
+              "angle": 130.0,
+              "distance": 0.70,
+              "depth": 0.0
+            },
+            {
+              "type": "LEFT_TURN",
+              "angle": 120.0,
+              "distance": 0.95,
+              "depth": 0.0
+            },
+            {
+              "type": "LEFT_TURN",
+              "angle": 110.0,
+              "distance": 1.30,
+              "depth": 0.0
+            },
+            {
+              "type": "LEFT_TURN",
+              "angle": 100.0,
+              "distance": 1.55,
+              "depth": 0.0
+            },
+            {
+              "type": "LEFT_TURN",
+              "angle": 90.0,
+              "distance": 1.70,
+              "depth": 0.0
+            },
+            {
+              "type": "LEFT_TURN",
+              "angle": 80.0,
+              "distance": 2.05,
+              "depth": 0.0
+            }
+          ]
+        }
+      },
+      {
+        "itemCode": 2,
+        "path": {
+          "pathId": 1,
+          "legs": [
+            {
+              "type": "INFO",
+              "angle": 150.0,
+              "info": "Go to your right side for next direction",
+              "distance": 0.5,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 0.5,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 0.75,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.0,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.25,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.5,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.75,
+              "depth": 0.0
+            }
+          ]
+        }
+      },
+      {
+        "itemCode": 3,
+        "path": {
+          "pathId": 1,
+          "legs": [
+            {
+              "type": "INFO",
+              "angle": 0.0,
+              "distance": 0.25,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 0.5,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 0.75,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.0,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.25,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.5,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.75,
+              "depth": 0.0
+            }
+          ]
+        }
+      },
+      {
+        "itemCode": 4,
+        "path": {
+          "pathId": 1,
+          "legs": [
+            {
+              "type": "INFO",
+              "angle": 0.0,
+              "distance": 0.25,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 0.5,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 0.75,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.0,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.25,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.5,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.75,
+              "depth": 0.0
+            }
+          ]
+        }
+      },
+      {
+        "itemCode": 5,
+        "path": {
+          "pathId": 1,
+          "legs": [
+            {
+              "type": "INFO",
+              "angle": 0.0,
+              "distance": 0.25,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 0.5,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 0.75,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.0,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.25,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.5,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.75,
+              "depth": 0.0
+            }
+          ]
+        }
+      },
+      {
+        "itemCode": 6,
+        "path": {
+          "pathId": 1,
+          "legs": [
+            {
+              "type": "INFO",
+              "angle": 0.0,
+              "distance": 0.25,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 0.5,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 0.75,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.0,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.25,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.5,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.75,
+              "depth": 0.0
+            }
+          ]
+        }
+      },
+      {
+        "itemCode": 7,
+        "path": {
+          "pathId": 1,
+          "legs": [
+            {
+              "type": "INFO",
+              "angle": 0.0,
+              "distance": 0.25,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 0.5,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 0.75,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.0,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.25,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.5,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.75,
+              "depth": 0.0
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "navigation": [
+      {
+        "itemCode": 1,
+        "path":{
+          "pathId": 2,
+          "legs": [
+            {
+              "type": "INFO",
+              "angle": 60.0,
+              "info": "Go to your right side for next direction",
+              "distance": 0.0,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 0.5,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.5,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 2.0,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 2.5,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 3.0,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 3.5,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 4.0,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 4.5,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 5.0,
+              "depth": 0.0
+            }
+          ]
+        }
+      },
+      {
+        "itemCode": 2,
+        "path": {
+          "pathId": 2,
+          "legs": [
+            {
+              "type": "INFO",
+              "angle": 180.0,
+              "info": "Go to your right side for next direction",
+              "distance": 1.0,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 0.5,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.0,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.5,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.75,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 2.0,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 2.5,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 3.0,
+              "depth": 0.0
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 3.5,
+              "depth": 0.05
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 4.0,
+              "depth": 0.25
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 4.5,
+              "depth": 0.05
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 5.0,
+              "depth": 0.25
+            },
+            {
+              "type": "FORWARD_RIGHT",
+              "angle": 0.0,
+              "distance": 5.0,
+              "depth": 0.25
+            },
+            {
+              "type": "FORWARD_RIGHT",
+              "angle": 0.0,
+              "distance": 5.0,
+              "depth": 0.5
+            },
+            {
+              "type": "FORWARD_RIGHT",
+              "angle": 0.0,
+              "distance": 5.0,
+              "depth": 1.5
+            },
+            {
+              "type": "FORWARD_RIGHT",
+              "angle": 0.0,
+              "distance": 5.0,
+              "depth": 2.0
+            },
+            {
+              "type": "FORWARD_RIGHT",
+              "angle": 0.0,
+              "distance": 5.0,
+              "depth": 2.5
+            }
+          ]
+        }
+      },
+      {
+        "itemCode": 3,
+        "path": {
+          "pathId": 2,
+          "legs": [
+            {
+              "type": "INFO",
+              "angle": 180.0,
+              "distance": 1.0,
+              "info": "On your left fresh Vegetables and right packaged one will be available.",
+              "depth": 0.0
+            },
+            {
+              "type": "DESTINATION",
+              "angle": 198.0,
+              "distance": 1.0,
+              "depth": 0.0
+            }
+          ]
+        }
+      },
+      {
+        "itemCode": 4,
+        "path": {
+          "pathId": 2,
+          "legs": [
+            {
+              "type": "INFO",
+              "angle": 180.0,
+              "distance": 1.0,
+              "info": "On your left fresh Vegetables and right packaged one will be available.",
+              "depth": 0.0
+            },
+            {
+              "type": "DESTINATION",
+              "angle": 198.0,
+              "distance": 1.0,
+              "depth": 0.0
+            }
+          ]
+        }
+      },
+      {
+        "itemCode": 5,
+        "path":  {
+          "pathId": 2,
+          "legs": [
+            {
+              "type": "INFO",
+              "angle": 180.0,
+              "distance": 1.0,
+              "info": "On your left fresh Vegetables and right packaged one will be available.",
+              "depth": 0.0
+            },
+            {
+              "type": "DESTINATION",
+              "angle": 198.0,
+              "distance": 1.0,
+              "depth": 0.0
+            }
+          ]
+        }
+      },
+      {
+        "itemCode": 6,
+        "path":{
+          "pathId": 2,
+          "legs": [
+            {
+              "type": "INFO",
+              "angle": 180.0,
+              "distance": 1.0,
+              "info": "On your left fresh Vegetables and right packaged one will be available.",
+              "depth": 0.0
+            },
+            {
+              "type": "DESTINATION",
+              "angle": 198.0,
+              "distance": 1.0,
+              "depth": 0.0
+            }
+          ]
+        }
+      },
+      {
+        "itemCode": 7,
+        "path": {
+          "pathId": 2,
+          "legs": [
+            {
+              "type": "INFO",
+              "angle": 180.0,
+              "distance": 1.0,
+              "info": "On your left fresh Vegetables and right packaged one will be available.",
+              "depth": 0.0
+            },
+            {
+              "type": "DESTINATION",
+              "angle": 198.0,
+              "distance": 1.0,
+              "depth": 0.0
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "navigation": [
+      {
+        "itemCode": 1,
+        "path": {
+          "pathId": 3,
+          "legs": [
+            {
+              "type": "DESTINATION",
+              "angle": 140.0,
+              "distance": 0.0,
+              "depth": 0.0
+            }
+          ]
+        }
+      },
+      {
+        "itemCode": 2,
+        "path": {
+          "pathId": 3,
+          "legs": [
+            {
+              "type": "DESTINATION",
+              "info": "Go to your right side for next direction",
+              "angle": 40.0,
+              "distance": 0.0,
+              "depth": 0.0
+            },{
+              "type": "INFO",
+              "info": "Please check the bellow rack for ",
+              "angle": 30.0,
+              "distance": 0.0,
+              "depth": 0.0
+            }
+          ]
+        }
+      },
+      {
+        "itemCode": 3,
+        "path": {
+          "pathId": 3,
+          "legs": [
+            {
+              "type": "INFO",
+              "angle": 0.0,
+              "distance": 0.0,
+              "info": "Go to your back then turn left side for next direction",
+              "depth": 0.0
+            }, {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 0.25
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 0.25
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 0.5
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 0.75
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 1.0
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 1.25
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 1.5
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 1.75
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 2.0
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 2.5
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 3.05
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 3.55
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 4.05
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 4.55
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 5.05
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 0.25,
+              "depth": 5.05
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.5,
+              "depth": 5.05
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 2.0,
+              "depth": 5.05
+            }
+          ]
+        }
+      },
+      {
+        "itemCode": 4,
+        "path":  {
+          "pathId": 3,
+          "legs": [
+            {
+              "type": "INFO",
+              "angle": 0.0,
+              "distance": 0.0,
+              "info": "Go to your back then turn left side for next direction",
+              "depth": 0.0
+            }, {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 0.25
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 0.25
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 0.5
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 0.75
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 1.0
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 1.25
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 1.5
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 1.75
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 2.0
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 2.5
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 3.05
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 3.55
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 4.05
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 4.55
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 5.05
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 0.25,
+              "depth": 5.05
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.5,
+              "depth": 5.05
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 2.0,
+              "depth": 5.05
+            }
+          ]
+        }
+      },
+      {
+        "itemCode": 5,
+        "path":  {
+          "pathId": 3,
+          "legs": [
+            {
+              "type": "INFO",
+              "angle": 0.0,
+              "distance": 0.0,
+              "info": "Go to your back then turn left side for next direction",
+              "depth": 0.0
+            }, {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 0.25
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 0.25
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 0.5
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 0.75
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 1.0
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 1.25
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 1.5
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 1.75
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 2.0
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 2.5
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 3.05
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 3.55
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 4.05
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 4.55
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 5.05
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 0.25,
+              "depth": 5.05
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.5,
+              "depth": 5.05
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 2.0,
+              "depth": 5.05
+            }
+          ]
+        }
+      },
+      {
+        "itemCode": 6,
+        "path": {
+          "pathId": 3,
+          "legs": [
+            {
+              "type": "INFO",
+              "angle": 0.0,
+              "distance": 0.0,
+              "info": "Go to your back then turn left side for next direction",
+              "depth": 0.0
+            }, {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 0.25
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 0.25
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 0.5
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 0.75
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 1.0
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 1.25
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 1.5
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 1.75
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 2.0
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 2.5
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 3.05
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 3.55
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 4.05
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 4.55
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 5.05
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 0.25,
+              "depth": 5.05
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.5,
+              "depth": 5.05
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 2.0,
+              "depth": 5.05
+            }
+          ]
+        }
+      },
+      {
+        "itemCode": 7,
+        "path": {
+          "pathId": 3,
+          "legs": [
+            {
+              "type": "INFO",
+              "angle": 0.0,
+              "distance": 0.0,
+              "info": "Go to your back then turn left side for next direction",
+              "depth": 0.0
+            }, {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 0.25
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 0.25
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 0.5
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 0.75
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 1.0
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 1.25
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 1.5
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 1.75
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 2.0
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 2.5
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 3.05
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 3.55
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 4.05
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 4.55
+            },
+            {
+              "type": "FORWARD_LEFT",
+              "angle": 0.0,
+              "distance": 0.0,
+              "depth": 5.05
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 0.25,
+              "depth": 5.05
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 1.5,
+              "depth": 5.05
+            },
+            {
+              "type": "RIGHT_TURN",
+              "angle": 0.0,
+              "distance": 2.0,
+              "depth": 5.05
+            }
+          ]
+        }
+      }
+    ]
+  }
 ]

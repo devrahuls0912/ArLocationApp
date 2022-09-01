@@ -9,9 +9,14 @@ import com.bodhi.arloctiondemo.databinding.ItemShopViewHolderBinding
 import com.bodhi.arloctiondemo.mapShopItemImageDrawable
 
 class ShopItemAdapter(
-    var list: List<ShopItems>,
     val onSelectDelegate: (item: List<ShopItems>) -> Unit
 ) : RecyclerView.Adapter<ShopItemAdapter.ShopItemsViewHolder>() {
+    private var shopList: List<ShopItems> = emptyList()
+
+    fun updateShopList(list: List<ShopItems>) {
+        shopList = list
+        notifyDataSetChanged()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ShopItemsViewHolder {
         return ShopItemsViewHolder(
@@ -24,13 +29,13 @@ class ShopItemAdapter(
     }
 
     override fun onBindViewHolder(holder: ShopItemsViewHolder, position: Int) {
-        holder.bindItem(list[position])
+        holder.bindItem(shopList[position])
     }
 
-    override fun getItemCount(): Int = list.size
+    override fun getItemCount(): Int = shopList.size
 
     fun filterList(filteredList: ArrayList<ShopItems>) {
-        list = filteredList
+        shopList = filteredList
         notifyDataSetChanged()
     }
 
@@ -62,7 +67,7 @@ class ShopItemAdapter(
 
     fun getSelectedShopItemList(): ArrayList<ShopItems> {
         val selectedList: ArrayList<ShopItems> = arrayListOf()
-        for (shopItem in list) {
+        for (shopItem in shopList) {
             if (shopItem.isSelected) {
                 selectedList.add(shopItem)
             }
