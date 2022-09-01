@@ -18,6 +18,7 @@ import androidx.lifecycle.lifecycleScope
 import com.bodhi.arloctiondemo.ArViewModel
 import com.bodhi.arloctiondemo.R
 import com.bodhi.arloctiondemo.data.LegNav
+import com.bodhi.arloctiondemo.data.ShopItems
 import com.bodhi.arloctiondemo.databinding.NavigationArActivityBinding
 import com.bodhi.arloctiondemo.location.Utils
 import com.bodhi.arloctiondemo.location.arLocation.handleSessionException
@@ -81,6 +82,7 @@ class NavigationActivity : AppCompatActivity() {
     private val selectedItemCodeList: ArrayList<Int> by lazy {
         intent.getSerializableExtra("selectedItemCodeList") as ArrayList<Int>
     }
+    private var temporaryItemSelectedList: List<ShopItems> = listOf()
 
     private var anchorRefreshTask: Runnable = object : Runnable {
         override fun run() {
@@ -110,13 +112,28 @@ class NavigationActivity : AppCompatActivity() {
         binding.arSceneView.scene.camera.farClipPlane = 500f
         deviceOrientation = DeviceOrientation(this)
         binding.qrCode.setOnClickListener {
+            binding.arSceneView.session?.update()
             shouldProcessFrame = true
         }
+        binding.closeSelection.setOnClickListener {
+            with(binding) {
+                navigateToSelectedItem.visibility = View.GONE
+                selectedItemList.visibility = View.GONE
+                closeSelection.visibility = View.GONE
+                qrCode.visibility = View.VISIBLE
+                exitNow.visibility = View.VISIBLE
+                headingSelectedNavigationInfo.visibility = View.VISIBLE
+                headingSelectedNavigationInfo.text = "Scan Nearest QR code to get direction"
+            }
+        }
         binding.navigateToSelectedItem.setOnClickListener {
+            binding.arSceneView.session?.update()
+            viewModel.currentSelectedItemId = temporaryItemSelectedList.first().itemCode
             // before plotting hide selection list and button
             with(binding) {
                 navigateToSelectedItem.visibility = View.GONE
                 selectedItemList.visibility = View.GONE
+                closeSelection.visibility = View.GONE
                 qrCode.visibility = View.VISIBLE
                 exitNow.visibility = View.VISIBLE
                 headingSelectedNavigationInfo.visibility = View.VISIBLE
@@ -155,13 +172,28 @@ class NavigationActivity : AppCompatActivity() {
                             it.any { AnchorType.valueOf(it.type) == AnchorType.DESTINATION }) &&
                     selectedItemCodeList.size > 1
                 ) {
+                    val trimmedArray = temporaryItemSelectedList.filter {
+                        it.itemCode != viewModel.currentSelectedItemId
+                    }
+                    temporaryItemSelectedList = trimmedArray
                     //here update the temp array to remove item from selection list
-                    with(binding) {
-                        navigateToSelectedItem.visibility = View.VISIBLE
-                        selectedItemList.visibility = View.VISIBLE
-                        qrCode.visibility = View.GONE
-                        exitNow.visibility = View.GONE
-                        headingSelectedNavigationInfo.visibility = View.GONE
+                    if (temporaryItemSelectedList.isNotEmpty())
+                        with(binding) {
+                            navigateToSelectedItem.visibility = View.VISIBLE
+                            selectedItemList.visibility = View.VISIBLE
+                            closeSelection.visibility = View.VISIBLE
+                            qrCode.visibility = View.GONE
+                            exitNow.visibility = View.GONE
+                            headingSelectedNavigationInfo.visibility = View.GONE
+                            selectedItemList.adapter =
+                                MultiItemSelectionAdapter(temporaryItemSelectedList)
+                        } else with(binding) {
+                        navigateToSelectedItem.visibility = View.GONE
+                        selectedItemList.visibility = View.GONE
+                        closeSelection.visibility = View.GONE
+                        qrCode.visibility = View.VISIBLE
+                        exitNow.visibility = View.VISIBLE
+                        headingSelectedNavigationInfo.visibility = View.VISIBLE
                     }
                 } else {
                     with(binding) {
@@ -177,6 +209,7 @@ class NavigationActivity : AppCompatActivity() {
         }
         viewModel.getSelectedItemListingObservable(selectedItemCodeList).observe(this) { shopList ->
             shopList?.let {
+                temporaryItemSelectedList = it
                 viewModel.currentSelectedItemId = it.first().itemCode
 
                 if (selectedItemCodeList.size > 1) // more than one item selected
@@ -256,10 +289,15 @@ class NavigationActivity : AppCompatActivity() {
             frameTime?.let {
                 val frame = arSceneView.arFrame ?: return@addOnUpdateListener
                 if (frame.camera.trackingState == TrackingState.TRACKING) {
+                    binding.headingSelectedNavigationInfo.text =
+                        "Tracking ........"
                     if (shouldProcessFrame) {
                         shouldProcessFrame = false
                         processArFrameDelegate()
                     }
+                } else {
+                    binding.headingSelectedNavigationInfo.text =
+                        "Camera is trying to track.. Please be patience"
                 }
             }
         }
@@ -333,69 +371,70 @@ class NavigationActivity : AppCompatActivity() {
             "QR code compatible trying to plot next location.",
             Toast.LENGTH_SHORT
         ).show()
-        navigationList.forEach {
-            createPrimaryMarker(
-                it,
-                viewModel.getSelectedItemName() ?: "",
-                viewModel.currentSelectedItemId
-            )
+        arSceneView.arFrame?.camera?.displayOrientedPose?.let { displayPose ->
+            navigationList.forEach {
+                createPrimaryMarker(
+                    it,
+                    viewModel.getSelectedItemName() ?: "",
+                    viewModel.currentSelectedItemId,
+                    displayPose
+                )
+            }
         }
     }
 
     private fun createPrimaryMarker(
         legNav: LegNav,
         itemName: String,
-        itemCode: Int
+        itemCode: Int,
+        displayPose: Pose
     ) {
         try {
-            arSceneView.arFrame?.camera?.displayOrientedPose?.let { displayPose ->
-                val completableRenderable = when (AnchorType.valueOf(legNav.type)) {
-                    AnchorType.INFO,
-                    AnchorType.DESTINATION -> ViewRenderable.builder().setView(
-                        this,
-                        R.layout.location_layout_renderable
-                    )
-                        .build()
-                    else -> null
-                }
-                if (completableRenderable != null) {
-                    completableRenderable.thenAccept {
-                        it?.let {
-                            if (AnchorType.valueOf(legNav.type) == AnchorType.DESTINATION) {
-                                it.view?.findViewById<TextView>(R.id.name)?.text = itemName
-                                mapShopItemImageDrawable(
-                                    this@NavigationActivity,
-                                    itemCode
-                                )?.let { dr ->
-                                    it.view?.findViewById<ImageView>(R.id.categoryIcon)
-                                        ?.setImageDrawable(dr)
-                                }
-                            } else if (AnchorType.valueOf(legNav.type) == AnchorType.INFO) {
-                                it.view?.findViewById<TextView>(R.id.name)?.text =
-                                    "${legNav.info} to find $itemName"
+            val completableRenderable = when (AnchorType.valueOf(legNav.type)) {
+                AnchorType.INFO,
+                AnchorType.DESTINATION -> ViewRenderable.builder().setView(
+                    this,
+                    R.layout.location_layout_renderable
+                )
+                    .build()
+                else -> null
+            }
+            if (completableRenderable != null) {
+                completableRenderable.thenAccept {
+                    it?.let {
+                        if (AnchorType.valueOf(legNav.type) == AnchorType.DESTINATION) {
+                            it.view?.findViewById<TextView>(R.id.name)?.text = itemName
+                            mapShopItemImageDrawable(
+                                this@NavigationActivity,
+                                itemCode
+                            )?.let { dr ->
+                                it.view?.findViewById<ImageView>(R.id.categoryIcon)
+                                    ?.setImageDrawable(dr)
                             }
+                        } else if (AnchorType.valueOf(legNav.type) == AnchorType.INFO) {
+                            it.view?.findViewById<TextView>(R.id.name)?.text =
+                                "${legNav.info} to find $itemName"
+                        }
 
-                            displayPose.createCompassMarkerPose(
-                                legNav,
-                                it
-                            )
-                        }
+                        displayPose.createCompassMarkerPose(
+                            legNav,
+                            it
+                        )
                     }
-                } else {
-                    ModelRenderable.builder().setSource(
-                        this,
-                        Uri.parse("tinker.sfb")
-                    ).build().thenAccept {
-                        it?.let {
-                            displayPose.createCompassMarkerPose(
-                                legNav,
-                                it
-                            )
-                        }
+                }
+            } else {
+                ModelRenderable.builder().setSource(
+                    this,
+                    Uri.parse("tinker.sfb")
+                ).build().thenAccept {
+                    it?.let { render ->
+                        displayPose.createCompassMarkerPose(
+                            legNav,
+                            render
+                        )
                     }
                 }
             }
-
         } catch (ex: Exception) {
             Log.i("tag", ex.toString())
         }

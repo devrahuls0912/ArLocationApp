@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/bodhi/Documents/workspace/ignitepoc/app/src/main/res/layout/activity_shop_item_listing.xml" value="0.23802083333333332" />
         <entry key="..\:/Users/bodhi/Documents/workspace/ignitepoc/app/src/main/res/layout/item_multi_item_selection.xml" value="0.23697916666666666" />
+        <entry key="..\:/Users/bodhi/Documents/workspace/ignitepoc/app/src/main/res/layout/item_shop_view_holder.xml" value="0.23802083333333332" />
         <entry key="..\:/Users/bodhi/Documents/workspace/ignitepoc/app/src/main/res/layout/navigation_ar_activity.xml" value="0.23802083333333332" />
       </map>
     </option>

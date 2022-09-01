@@ -177,7 +177,7 @@ class ArViewModel : ViewModel() {
             AnchorType.FORWARD_LEFT -> pose.compose(
                 Pose.makeTranslation(
                     (pose.tx() - legNav.distance).toFloat(),
-                    legNav.height.toFloat() + legNav.depth.toFloat(),
+                    legNav.height.toFloat(),
                     pose.tz() + legNav.depth.toFloat() - 0.5f
                 )
             ).extractTranslation()

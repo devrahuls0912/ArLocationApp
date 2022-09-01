@@ -12,12 +12,18 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.bodhi.arloctiondemo.ArViewModel
+import com.bodhi.arloctiondemo.data.QRNodeInfo
 import com.bodhi.arloctiondemo.data.ShopItems
 import com.bodhi.arloctiondemo.databinding.ActivityShopItemListingBinding
+import com.bodhi.arloctiondemo.readAssetsFile
 import com.bodhi.arloctiondemo.ui.adapter.ShopItemAdapter
 import com.bodhi.arloctiondemo.ui.arview.NavigationActivity
 import com.bodhi.arloctiondemo.ui.login.LoginActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.MultiplePermissionsReport
 import com.karumi.dexter.PermissionToken
@@ -91,6 +97,17 @@ class ShopListActivity : AppCompatActivity() {
             }
         }
         viewModel.createShopItems()
+        binding.updateQr.setOnClickListener {
+            val anchorReference = Gson().fromJson<List<QRNodeInfo>>(
+                this.assets.readAssetsFile("qr.json"),
+                object : TypeToken<List<QRNodeInfo>>() {}.type
+            )
+            anchorReference.forEachIndexed { index, qrNodeInfo ->
+                Firebase.firestore.collection(
+                    "node"
+                ).document(index.toString()).set(qrNodeInfo)
+            }
+        }
     }
 
     private fun setUpObservable() {

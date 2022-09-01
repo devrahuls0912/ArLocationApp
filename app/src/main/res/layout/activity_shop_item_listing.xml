@@ -15,6 +15,19 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/updateQr"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:layout_marginStart="10dp"
+            android:drawableEnd="@drawable/ic_baseline_qr_code"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:text="Update QR Code"
+            android:textColor="#ffffff"
+            android:textSize="16sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/logout"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -47,24 +60,23 @@
         android:id="@+id/searchET"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
+        android:layout_margin="16dp"
         android:hint="Search item"
-        app:layout_constraintTop_toBottomOf="@id/heading"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="16dp"/>
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/heading" />
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listitems"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_margin="16dp"
         app:layout_constraintBottom_toTopOf="@id/shop_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchET"
-        android:layout_margin="16dp"/>
+        app:layout_constraintTop_toBottomOf="@+id/searchET" />
 
     <Button
         android:id="@+id/shop_button"
